@@ -1,3 +1,0 @@
-Taruh dua file gambar berikut ke dalam folder assets/ ini sebelum upload ke GitHub:
-1. qris.png  -> Hasil potongan QRIS bersih (bisa diunduh lewat tombol "Simpan Potongan sebagai assets/qris.png" di website).
-2. logo.png  -> Foto profil / logo Takaaa untuk tampil di sebelah nama Zakafi.
