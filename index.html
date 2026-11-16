@@ -17,6 +17,7 @@
       --tg-gradient: linear-gradient(135deg, #2AABEE 0%, #229ED9 100%);
       --tt-gradient: linear-gradient(135deg, #111111 0%, #262626 100%);
       --wa-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      --project-gradient: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
       --radius-xl: 24px;
       --radius-lg: 18px;
       --radius-md: 12px;
@@ -447,7 +448,7 @@
       flex: 1 1 auto;
     }
 
-    .btn-primary:active, .btn-secondary:active, .btn-ig:active, .btn-tg:active, .btn-tt:active, .btn-wa:active {
+    .btn-primary:active, .btn-secondary:active, .btn-ig:active, .btn-tg:active, .btn-tt:active, .btn-wa:active, .btn-project:active {
       transform: scale(0.98);
     }
 
@@ -511,6 +512,7 @@
     .icon-tg { background: var(--tg-gradient); }
     .icon-tt { background: var(--tt-gradient); border: 1px solid rgba(255,255,255,0.14); }
     .icon-wa { background: var(--wa-gradient); }
+    .icon-project { background: var(--project-gradient); }
 
     .social-meta {
       min-width: 0;
@@ -544,7 +546,7 @@
       gap: 8px;
     }
 
-    .btn-ig, .btn-tg, .btn-tt, .btn-wa {
+    .btn-ig, .btn-tg, .btn-tt, .btn-wa, .btn-project {
       flex: 1;
       color: #FFFFFF;
       border: none;
@@ -565,6 +567,7 @@
     .btn-tg { background: var(--tg-gradient); }
     .btn-tt { background: var(--tt-gradient); border: 1px solid rgba(255,255,255,0.14); }
     .btn-wa { background: var(--wa-gradient); }
+    .btn-project { background: var(--project-gradient); color: #031B15; font-weight: 800; }
 
     .btn-copy-mini {
       background: var(--bg-card-subtle);
@@ -577,6 +580,39 @@
       border-radius: 12px;
       cursor: pointer;
       flex-shrink: 0;
+    }
+
+    /* Project Card Specific */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .project-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .project-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--chip-text);
+      background: var(--chip-bg);
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .project-url-preview {
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg-card-subtle);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 8px 12px;
+      word-break: break-all;
     }
 
     /* Feedback / Saran & Komplain */
@@ -696,13 +732,13 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 90;
-      width: min(360px, calc(100% - 32px));
+      width: min(440px, calc(100% - 24px));
     }
 
     .liquid-dock {
       position: relative;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       align-items: center;
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
@@ -719,7 +755,7 @@
       position: absolute;
       top: 5px;
       left: 5px;
-      width: calc((100% - 10px) / 3);
+      width: calc((100% - 10px) / 4);
       height: calc(100% - 10px);
       background: var(--glass-pill);
       border: 1px solid var(--glass-border);
@@ -735,15 +771,15 @@
       background: transparent;
       color: var(--text-secondary);
       font-family: var(--font-body);
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
-      padding: 10px 8px;
+      padding: 10px 6px;
       border-radius: 999px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 5px;
       transition: color 0.2s ease;
     }
 
@@ -1013,7 +1049,48 @@
       </div>
     </section>
 
-    <!-- Section 3: Saran & Komplain -->
+    <!-- Section 3: Project -->
+    <section class="section-block" id="project">
+      <div class="section-heading">
+        <h3>Project</h3>
+        <span>Alat &amp; Karya Digital Takaaa</span>
+      </div>
+
+      <div class="bento-card project-card">
+        <div class="social-top">
+          <div class="social-icon-box icon-project">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div class="social-meta">
+            <div class="social-platform">Web Application &bull; Utility</div>
+            <div class="social-handle">Virtual Email &amp; Live OTP Receiver</div>
+            <div class="social-desc">
+              Buat alamat email sementara aktif dalam 1 klik, gunakan untuk mendaftar, dan terima kode OTP secara otomatis langsung di layar tanpa perlu reload.
+            </div>
+            <div class="project-badges">
+              <span class="project-tag">⚡ 1-Klik Generate</span>
+              <span class="project-tag">📩 Auto-Detect OTP</span>
+              <span class="project-tag">🌐 Gratis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-url-preview">
+          https://takayoskazuuu.github.io/otp-generator-takaaa/
+        </div>
+
+        <div class="social-action-row">
+          <a class="btn-project" href="https://takayoskazuuu.github.io/otp-generator-takaaa/" target="_blank" rel="noopener noreferrer">
+            🚀 Buka Project OTP Generator
+          </a>
+          <button type="button" class="btn-copy-mini" onclick="copyText('https://takayoskazuuu.github.io/otp-generator-takaaa/', 'Link Project OTP Generator disalin!')">
+            Salin Link
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Saran & Komplain -->
     <section class="section-block" id="saran">
       <div class="section-heading">
         <h3>Saran &amp; Komplain</h3>
@@ -1075,7 +1152,10 @@ Pesan:
       <button type="button" class="dock-item" data-index="1" data-target="sosmed">
         <span>🌐</span> Sosmed
       </button>
-      <button type="button" class="dock-item" data-index="2" data-target="saran">
+      <button type="button" class="dock-item" data-index="2" data-target="project">
+        <span>🚀</span> Project
+      </button>
+      <button type="button" class="dock-item" data-index="3" data-target="saran">
         <span>✉️</span> Saran
       </button>
     </div>
@@ -1112,6 +1192,12 @@ Pesan:
         telegram: { handle: "@ajahajah1", url: "https://t.me/ajahajah1" },
         tiktok: { handle: "@usernpc001", url: "https://www.tiktok.com/@usernpc001?_r=1&_t=ZS-9BRgFxI4cny" },
         whatsapp: { handle: "0881026467671", url: "https://wa.me/62881026467671" }
+      },
+      projects: {
+        otpGenerator: {
+          title: "Virtual Email & Live OTP Receiver",
+          url: "https://takayoskazuuu.github.io/otp-generator-takaaa/"
+        }
       }
     };
 
@@ -1280,12 +1366,10 @@ Pesan:
             }
           }
           const span = rMaxX > rMinX ? rMaxX - rMinX : 0;
-          // A QR code row has dense modules across a wide horizontal span
           const isQrRow = dark >= Math.max(6, pw * 0.06) && span >= pw * 0.25;
           rowStats.push({ y, rMinX, rMaxX, dark, isQrRow });
         }
 
-        // Find the tallest contiguous vertical band of QR rows (allows 1-2px anti-aliasing gap)
         let bestStart = -1, bestEnd = -1, bestHeight = 0;
         let curStart = -1, gap = 0;
         for (let i = 0; i < rowStats.length; i++) {
@@ -1319,7 +1403,6 @@ Pesan:
           const boxW = maxX - minX;
           const boxH = bestEnd - bestStart;
           if (boxW > 20 && boxH > 20) {
-            // Tight 1.02x zoom around the exact QR matrix square
             const side = Math.min(pw, ph, Math.max(boxW, boxH) * 1.02);
             const cx = (minX + maxX) / 2;
             const cy = (bestStart + bestEnd) / 2;
@@ -1328,9 +1411,7 @@ Pesan:
             return { sx, sy, sw: side / scale, sh: side / scale };
           }
         }
-      } catch (_) {
-        // Fallback to center square if pixel inspection is blocked
-      }
+      } catch (_) {}
 
       const side = Math.min(w, h);
       return { sx: (w - side) / 2, sy: (h - side) / 2, sw: side, sh: side };
@@ -1354,7 +1435,6 @@ Pesan:
     drawDefaultQris(qrisCanvas);
     drawDefaultQris(modalQrisCanvas);
 
-    // Hanya dimuat otomatis dari file lokal qris.png / assets/qris.png
     (function initQrisAsset() {
       tryLoadAssetSequence(ZAKAFI_CONFIG.assets.qrisPaths, (img) => {
         renderLoadedQrisImage(img);
@@ -1454,7 +1534,7 @@ Pesan:
       }
     });
 
-    const sectionIds = ["scan", "sosmed", "saran"];
+    const sectionIds = ["scan", "sosmed", "project", "saran"];
     window.addEventListener("scroll", () => {
       if (isDragging) return;
       const scrollPos = window.scrollY + window.innerHeight * 0.35;
