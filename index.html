@@ -18,6 +18,7 @@
       --tt-gradient: linear-gradient(135deg, #111111 0%, #262626 100%);
       --wa-gradient: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
       --project-gradient: linear-gradient(135deg, #10b981 0%, #0ea5e9 100%);
+      --project-tt-gradient: linear-gradient(135deg, #34d399 0%, #ec4899 100%);
       --radius-xl: 24px;
       --radius-lg: 18px;
       --radius-md: 12px;
@@ -448,7 +449,7 @@
       flex: 1 1 auto;
     }
 
-    .btn-primary:active, .btn-secondary:active, .btn-ig:active, .btn-tg:active, .btn-tt:active, .btn-wa:active, .btn-project:active {
+    .btn-primary:active, .btn-secondary:active, .btn-ig:active, .btn-tg:active, .btn-tt:active, .btn-wa:active, .btn-project:active, .btn-project-tt:active {
       transform: scale(0.98);
     }
 
@@ -469,15 +470,17 @@
       flex: 1 1 auto;
     }
 
-    /* Social Grid — 2x2 Seimbang */
-    .social-grid {
+    /* Grid 2 Kolom Seimbang (Sosmed & Project) */
+    .social-grid,
+    .project-grid {
       display: flex;
       flex-direction: column;
       gap: 14px;
     }
 
     @media (min-width: 768px) {
-      .social-grid {
+      .social-grid,
+      .project-grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
@@ -513,6 +516,7 @@
     .icon-tt { background: var(--tt-gradient); border: 1px solid rgba(255,255,255,0.14); }
     .icon-wa { background: var(--wa-gradient); }
     .icon-project { background: var(--project-gradient); }
+    .icon-project-tt { background: var(--project-tt-gradient); }
 
     .social-meta {
       min-width: 0;
@@ -546,7 +550,7 @@
       gap: 8px;
     }
 
-    .btn-ig, .btn-tg, .btn-tt, .btn-wa, .btn-project {
+    .btn-ig, .btn-tg, .btn-tt, .btn-wa, .btn-project, .btn-project-tt {
       flex: 1;
       color: #FFFFFF;
       border: none;
@@ -568,6 +572,7 @@
     .btn-tt { background: var(--tt-gradient); border: 1px solid rgba(255,255,255,0.14); }
     .btn-wa { background: var(--wa-gradient); }
     .btn-project { background: var(--project-gradient); color: #031B15; font-weight: 800; }
+    .btn-project-tt { background: var(--project-tt-gradient); color: #090D16; font-weight: 800; }
 
     .btn-copy-mini {
       background: var(--bg-card-subtle);
@@ -586,7 +591,15 @@
     .project-card {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .project-card-body {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .project-badges {
@@ -606,12 +619,12 @@
     }
 
     .project-url-preview {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-muted);
       background: var(--bg-card-subtle);
       border: 1px solid var(--border-color);
       border-radius: 10px;
-      padding: 8px 12px;
+      padding: 8px 11px;
       word-break: break-all;
     }
 
@@ -1049,43 +1062,84 @@
       </div>
     </section>
 
-    <!-- Section 3: Project -->
+    <!-- Section 3: Project (2 Karya Digital) -->
     <section class="section-block" id="project">
       <div class="section-heading">
         <h3>Project</h3>
-        <span>Alat &amp; Karya Digital Takaaa</span>
+        <span>2 Alat &amp; Karya Digital Takaaa</span>
       </div>
 
-      <div class="bento-card project-card">
-        <div class="social-top">
-          <div class="social-icon-box icon-project">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      <div class="project-grid">
+        <!-- Project 1: Virtual Email & Live OTP Receiver -->
+        <div class="bento-card project-card">
+          <div class="project-card-body">
+            <div class="social-top">
+              <div class="social-icon-box icon-project">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <div class="social-meta">
+                <div class="social-platform">Web Application &bull; Utility</div>
+                <div class="social-handle">Virtual Email &amp; Live OTP Receiver</div>
+                <div class="social-desc">
+                  Buat alamat email sementara aktif dalam 1 klik dan terima kode OTP secara otomatis di layar tanpa perlu reload.
+                </div>
+                <div class="project-badges">
+                  <span class="project-tag">⚡ 1-Klik Generate</span>
+                  <span class="project-tag">📩 Auto-Detect OTP</span>
+                  <span class="project-tag">🌐 Gratis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-url-preview">
+              https://takayoskazuuu.github.io/otp-generator-takaaa/
+            </div>
           </div>
-          <div class="social-meta">
-            <div class="social-platform">Web Application &bull; Utility</div>
-            <div class="social-handle">Virtual Email &amp; Live OTP Receiver</div>
-            <div class="social-desc">
-              Buat alamat email sementara aktif dalam 1 klik, gunakan untuk mendaftar, dan terima kode OTP secara otomatis langsung di layar tanpa perlu reload.
-            </div>
-            <div class="project-badges">
-              <span class="project-tag">⚡ 1-Klik Generate</span>
-              <span class="project-tag">📩 Auto-Detect OTP</span>
-              <span class="project-tag">🌐 Gratis</span>
-            </div>
+
+          <div class="social-action-row">
+            <a class="btn-project" href="https://takayoskazuuu.github.io/otp-generator-takaaa/" target="_blank" rel="noopener noreferrer">
+              🚀 Buka OTP Generator
+            </a>
+            <button type="button" class="btn-copy-mini" onclick="copyText('https://takayoskazuuu.github.io/otp-generator-takaaa/', 'Link Project OTP Generator disalin!')">
+              Salin
+            </button>
           </div>
         </div>
 
-        <div class="project-url-preview">
-          https://takayoskazuuu.github.io/otp-generator-takaaa/
-        </div>
+        <!-- Project 2: TikTok Downloader HD No Watermark -->
+        <div class="bento-card project-card">
+          <div class="project-card-body">
+            <div class="social-top">
+              <div class="social-icon-box icon-project-tt">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+              </div>
+              <div class="social-meta">
+                <div class="social-platform">Media Tool &bull; Downloader</div>
+                <div class="social-handle">TikTok No Watermark Downloader</div>
+                <div class="social-desc">
+                  Unduh video TikTok Full HD 1080p (.MP4) tanpa watermark, galeri foto slideshow, maupun audio (.MP3) secara cepat.
+                </div>
+                <div class="project-badges">
+                  <span class="project-tag">🎬 Full HD 1080p</span>
+                  <span class="project-tag">🚫 No Watermark</span>
+                  <span class="project-tag">🎵 MP3 &amp; Slides</span>
+                </div>
+              </div>
+            </div>
 
-        <div class="social-action-row">
-          <a class="btn-project" href="https://takayoskazuuu.github.io/otp-generator-takaaa/" target="_blank" rel="noopener noreferrer">
-            🚀 Buka Project OTP Generator
-          </a>
-          <button type="button" class="btn-copy-mini" onclick="copyText('https://takayoskazuuu.github.io/otp-generator-takaaa/', 'Link Project OTP Generator disalin!')">
-            Salin Link
-          </button>
+            <div class="project-url-preview">
+              https://takayoskazuuu.github.io/tiktok-downloader-takaaa/
+            </div>
+          </div>
+
+          <div class="social-action-row">
+            <a class="btn-project-tt" href="https://takayoskazuuu.github.io/tiktok-downloader-takaaa/" target="_blank" rel="noopener noreferrer">
+              🎬 Buka TT Downloader
+            </a>
+            <button type="button" class="btn-copy-mini" onclick="copyText('https://takayoskazuuu.github.io/tiktok-downloader-takaaa/', 'Link Project TikTok Downloader disalin!')">
+              Salin
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1197,6 +1251,10 @@ Pesan:
         otpGenerator: {
           title: "Virtual Email & Live OTP Receiver",
           url: "https://takayoskazuuu.github.io/otp-generator-takaaa/"
+        },
+        tiktokDownloader: {
+          title: "TikTok No Watermark Downloader",
+          url: "https://takayoskazuuu.github.io/tiktok-downloader-takaaa/"
         }
       }
     };
